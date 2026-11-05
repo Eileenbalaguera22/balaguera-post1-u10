@@ -28,8 +28,13 @@
     </dependencies>
 
     <build>
-        <plugins>
+        <!-- Redirección exacta para que Maven encuentre el código dentro de envios-service -->
+        <sourceDirectory>envios-service/src/main/java</sourceDirectory>
+        <testSourceDirectory>envios-service/src/test/java</testSourceDirectory>
+        <outputDirectory>envios-service/target/classes</outputDirectory>
+        <testOutputDirectory>envios-service/target/test-classes</testOutputDirectory>
 
+        <plugins>
             <!-- Compilación Java 21 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -52,7 +57,6 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
-
                 <executions>
                     <execution>
                         <id>prepare-agent</id>
@@ -60,17 +64,18 @@
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-
                     <execution>
                         <id>report</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
+                        <configuration>
+                            <outputDirectory>envios-service/target/site/jacoco</outputDirectory>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 </project>
