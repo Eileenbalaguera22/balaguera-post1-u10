@@ -1,6 +1,0 @@
-projectKey=com.universidad:envios-service
-serverUrl=http://localhost:9000
-serverVersion=26.10.0.133078
-dashboardUrl=http://localhost:9000/dashboard?id=com.universidad%3Aenvios-service
-ceTaskId=352a2df0-8997-4f65-aeab-ad7788fd8d59
-ceTaskUrl=http://localhost:9000/api/ce/task?id=352a2df0-8997-4f65-aeab-ad7788fd8d59
